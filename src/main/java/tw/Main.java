@@ -1,8 +1,6 @@
 package tw;
 
-import java.util.Random;
 import java.util.Set;
-import java.util.TreeSet;
 
 import tw.commands.GuessInputCommand;
 
@@ -15,11 +13,7 @@ public class Main {
     
     public static void main(String[] args) throws Exception {
     	GuessInputCommand guessInputCommand = new GuessInputCommand();
-    	Set<Integer> answer = guessInputCommand.getAnswer();
-    	for (Integer integer : answer) {
-			System.out.print(integer + "  ");
-		}
-    	System.out.println();
+    	Set<Integer> answer = guessInputCommand.getAnswer();    
         for (int i = 0; i < RUN_TIMES; i++) {
             String input = guessInputCommand.input();
             String[] inputStringAnswer = guessInputCommand.stringToArray(input);
@@ -33,5 +27,6 @@ public class Main {
         	    break;
 		      } 
         }
+        System.out.println("game over!");
     }
 }
