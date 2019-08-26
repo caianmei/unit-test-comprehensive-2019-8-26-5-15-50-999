@@ -13,13 +13,14 @@ public class Main {
     
     public static void main(String[] args) throws Exception {
     	GuessInputCommand guessInputCommand = new GuessInputCommand();
-    	Set<Integer> answer = guessInputCommand.getAnswer();    
+    	Set<Integer> answer = guessInputCommand.getAnswer(); 
         for (int i = 0; i < RUN_TIMES; i++) {
             String input = guessInputCommand.input();
             String[] inputStringAnswer = guessInputCommand.stringToArray(input);
             int[] inputAnswer = guessInputCommand.StringToInt(inputStringAnswer);
             if (!guessInputCommand.judgeCount(inputAnswer)) {
 				guessInputCommand.setHeight("put error,please put again");
+				System.out.println(guessInputCommand.getHeight());
 				i --;
 				continue;
 			}
