@@ -107,7 +107,7 @@ class LibraryTest {
 	}
 	
 	@Test
-	void should_return_1_when_judge_is_exsit_given_int_number_1_and_set_1234() {
+	void should_return_true_when_judge_is_in_index_given_int_number_1_and_set_1234_and_index_0() {
 		//given
 		GuessInputCommand guessInputCommand = new GuessInputCommand();
 		int number = 1;
@@ -117,24 +117,25 @@ class LibraryTest {
 		array.add(3);
 		array.add(4);
 		//when
-		int index = guessInputCommand.getIndex(array, number);
+		boolean indexFlag = guessInputCommand.isInIndex(array, number,0);
 		//then
-		assertEquals(0, index);
+		assertEquals(true, indexFlag);
 	}
 	
 	@Test
-	void should_return_negative_1_when_judge_is_exsit_given_int_number_1_and_set_1234() {
+	void should_return_false_when_judge_is_in_index_given_int_number_1_and_set_1234_and_index_1() {
 		//given
 		GuessInputCommand guessInputCommand = new GuessInputCommand();
-		int number = 5;
+		int number = 1;
 		Set<Integer> array = new HashSet<>();
 		array.add(1);
 		array.add(2);
 		array.add(3);
 		array.add(4);
 		//when
-		int index = guessInputCommand.getIndex(array, number);
+		boolean indexFlag = guessInputCommand.isInIndex(array, number,1);
 		//then
-		assertEquals(-1, index);
+		assertEquals(false, indexFlag);
 	}
+	
 }

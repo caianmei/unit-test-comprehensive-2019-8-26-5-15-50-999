@@ -54,20 +54,24 @@ public class GuessInputCommand {
 		return flag;
 	}
     
-    public int getIndex(Set<Integer> answer, int inputAnswerNumber) {
-		int index = -1;
-		int which = 0;
+    public boolean isInIndex(Set<Integer> answer, int inputAnswerNumber,int inputAnswerIndex) {
+		boolean flag = false;
+    	int which = 0;
 		for (Integer number : answer) {
 			if (number == inputAnswerNumber) {
-				index = which;
+				if (which == inputAnswerIndex) {
+					flag = true;
+				}
 				break;
 			}
 			which ++;
 		}
-		return index;
+		return flag;
 	}
     
 	public String judgeAnswer(Set<Integer> answer, String[] inputStringAnswer) {
+		int rightNumber = 0;
+		int rightIndex = 1;
 		return null;
 		
 	}
