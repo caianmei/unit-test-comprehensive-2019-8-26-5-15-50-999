@@ -17,7 +17,12 @@ public class Main {
         for (int i = 0; i < RUN_TIMES; i++) {
             String input = guessInputCommand.input();
             String[] inputStringAnswer = guessInputCommand.stringToArray(input);
-            int[] inputAnswer = guessInputCommand.StringToInt(inputStringAnswer);         
+            int[] inputAnswer = guessInputCommand.StringToInt(inputStringAnswer);
+            if (!guessInputCommand.judgeCount(inputAnswer)) {
+				guessInputCommand.setHeight("put error,please put again");
+				i --;
+				continue;
+			}
             int[] countArray = guessInputCommand.countAnswer(answer, inputAnswer);
             guessInputCommand.setAnswerString(guessInputCommand.printAnswer(countArray));
             System.out.println(guessInputCommand.getAnswerString());

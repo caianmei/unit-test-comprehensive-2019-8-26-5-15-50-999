@@ -206,4 +206,25 @@ class LibraryTest {
 		assertEquals("4A3B", answer);
 	}
 	
+	@Test
+	void should_return_true_when_judge_count_given_input_answer_4321() {
+		//given
+		GuessInputCommand guessInputCommand = new GuessInputCommand();
+		int[] inputAnswer = {4,3,2,1};
+		//when
+		boolean isRight = guessInputCommand.judgeCount(inputAnswer);
+		//then
+		assertEquals(true, isRight);
+	}
+	
+	@Test
+	void should_return_false_when_judge_count_given_input_answer_431() {
+		//given
+		GuessInputCommand guessInputCommand = new GuessInputCommand();
+		int[] inputAnswer = {4,3,1};
+		//when
+		boolean isRight = guessInputCommand.judgeCount(inputAnswer);
+		//then
+		assertEquals(false, isRight);
+	}
 }
