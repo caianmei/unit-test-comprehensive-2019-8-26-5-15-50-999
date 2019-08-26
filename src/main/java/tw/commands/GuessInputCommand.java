@@ -69,10 +69,20 @@ public class GuessInputCommand {
 		return flag;
 	}
     
-	public String judgeAnswer(Set<Integer> answer, String[] inputStringAnswer) {
-		int rightNumber = 0;
-		int rightIndex = 1;
-		return null;
+	public int[] countAnswer(Set<Integer> answer, int[] inputAnswer) {
+		int[] rightArray = {0,0};
+		int index = 0;
+		for (int number : inputAnswer) {
+			if (!judgeIsExsit(answer, number)) {
+				continue;
+			}
+			rightArray[0] += 1;
+			if (isInIndex(answer, number, index)) {
+				rightArray[1] += 1;
+			}
+			index ++;
+		}
+		return rightArray;
 		
 	}
 }

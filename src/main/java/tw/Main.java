@@ -18,8 +18,10 @@ public class Main {
     	Set<Integer> answer = guessInputCommand.getAnswer();
         for (int i = 0; i < RUN_TIMES; i++) {
             String input = guessInputCommand.input();
-            String[] inputAnswer = guessInputCommand.stringToArray(input);
-            new GuessInputCommand().judgeAnswer(answer,inputAnswer);
+            String[] inputStringAnswer = guessInputCommand.stringToArray(input);
+            int[] inputAnswer = guessInputCommand.StringToInt(inputStringAnswer);
+            int[] countArray = guessInputCommand.countAnswer(answer, inputAnswer);
+            //new GuessInputCommand().judgeAnswer(countArray);
             System.out.println(input);
         }
     }

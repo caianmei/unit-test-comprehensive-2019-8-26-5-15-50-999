@@ -138,4 +138,39 @@ class LibraryTest {
 		assertEquals(false, indexFlag);
 	}
 	
+	
+	@Test
+	void should_return_count_array_44_when_count_answer_given_input_answer_1234_and_set_1234_and_index_1() {
+		//given
+		GuessInputCommand guessInputCommand = new GuessInputCommand();
+		int[] inputAnswer = {1,2,3,4};
+		Set<Integer> array = new HashSet<>();
+		array.add(1);
+		array.add(2);
+		array.add(3);
+		array.add(4);
+		//when
+		int[] countArray = guessInputCommand.countAnswer(array, inputAnswer);
+		//then
+		assertEquals(4, countArray[0]);
+		assertEquals(4, countArray[1]);
+	}
+	
+	@Test
+	void should_return_count_array_42_when_count_answer_given_input_answer_1243_and_set_1234_and_index_1() {
+		//given
+		GuessInputCommand guessInputCommand = new GuessInputCommand();
+		int[] inputAnswer = {1,2,4,3};
+		Set<Integer> array = new HashSet<>();
+		array.add(1);
+		array.add(2);
+		array.add(3);
+		array.add(4);
+		//when
+		int[] countArray = guessInputCommand.countAnswer(array, inputAnswer);
+		//then
+		assertEquals(4, countArray[0]);
+		assertEquals(2, countArray[1]);
+	}
+	
 }
