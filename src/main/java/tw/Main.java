@@ -16,13 +16,22 @@ public class Main {
     public static void main(String[] args) throws Exception {
     	GuessInputCommand guessInputCommand = new GuessInputCommand();
     	Set<Integer> answer = guessInputCommand.getAnswer();
+    	for (Integer integer : answer) {
+			System.out.print(integer + "  ");
+		}
+    	System.out.println();
         for (int i = 0; i < RUN_TIMES; i++) {
             String input = guessInputCommand.input();
             String[] inputStringAnswer = guessInputCommand.stringToArray(input);
-            int[] inputAnswer = guessInputCommand.StringToInt(inputStringAnswer);
+            int[] inputAnswer = guessInputCommand.StringToInt(inputStringAnswer);         
             int[] countArray = guessInputCommand.countAnswer(answer, inputAnswer);
-            boolean isRight = guessInputCommand.judgeAnswer(countArray);
-            System.out.println(input);
+            guessInputCommand.setAnswerString(guessInputCommand.printAnswer(countArray));
+            System.out.println(guessInputCommand.getAnswerString());
+            if (guessInputCommand.judgeAnswer(countArray)) {
+            	guessInputCommand.setHeight("you win");
+        	    System.out.println(guessInputCommand.getHeight());
+        	    break;
+		      } 
         }
     }
 }

@@ -13,8 +13,27 @@ import java.util.Set;
 public class GuessInputCommand {
 
     private BufferedReader bufferedReader;
+    private String height;
+    private String answerString;
 
-    public GuessInputCommand() {
+    public String getHeight() {
+		return height;
+	}
+
+    public void setHeight(String height) {
+		this.height = height;
+	}
+
+    
+	public String getAnswerString() {
+		return answerString;
+	}
+
+	public void setAnswerString(String answerString) {
+		this.answerString = answerString;
+	}
+	
+	public GuessInputCommand() {
         bufferedReader = new BufferedReader(new InputStreamReader(System.in));
     }
 
@@ -88,5 +107,9 @@ public class GuessInputCommand {
 	
 	public boolean judgeAnswer(int[] countArray) {
 		return countArray[0] == 4 && countArray[1] == 4 ? true:false; 
+	}
+
+	public String printAnswer(int[] countArray) {		
+		return countArray[0] + "A" + countArray[1] + "B";
 	}
 }

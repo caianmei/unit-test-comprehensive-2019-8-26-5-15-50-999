@@ -195,4 +195,14 @@ class LibraryTest {
 		assertEquals(false, isRight);
 	}
 	
+	@Test
+	void should_return_4A3B_when_print_answer_given_count_answer_43() {
+		//given
+		GuessInputCommand guessInputCommand = new GuessInputCommand();
+		int[] countAnswer = {4,3};
+		//when
+		String answer = guessInputCommand.printAnswer(countAnswer);
+		//then
+		assertEquals("4A3B", answer);
+	}
 }
