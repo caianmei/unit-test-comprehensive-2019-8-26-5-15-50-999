@@ -173,4 +173,26 @@ class LibraryTest {
 		assertEquals(2, countArray[1]);
 	}
 	
+	@Test
+	void should_return_true_when_judge_answer_given_count_answer_44() {
+		//given
+		GuessInputCommand guessInputCommand = new GuessInputCommand();
+		int[] countAnswer = {4,4};
+		//when
+		boolean isRight = guessInputCommand.judgeAnswer(countAnswer);
+		//then
+		assertEquals(true, isRight);
+	}
+	
+	@Test
+	void should_return_false_when_judge_answer_given_count_answer_43() {
+		//given
+		GuessInputCommand guessInputCommand = new GuessInputCommand();
+		int[] countAnswer = {4,3};
+		//when
+		boolean isRight = guessInputCommand.judgeAnswer(countAnswer);
+		//then
+		assertEquals(false, isRight);
+	}
+	
 }

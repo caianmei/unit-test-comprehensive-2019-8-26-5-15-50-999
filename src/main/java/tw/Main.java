@@ -21,7 +21,7 @@ public class Main {
             String[] inputStringAnswer = guessInputCommand.stringToArray(input);
             int[] inputAnswer = guessInputCommand.StringToInt(inputStringAnswer);
             int[] countArray = guessInputCommand.countAnswer(answer, inputAnswer);
-            //new GuessInputCommand().judgeAnswer(countArray);
+            boolean isRight = guessInputCommand.judgeAnswer(countArray);
             System.out.println(input);
         }
     }

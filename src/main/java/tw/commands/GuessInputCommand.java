@@ -85,4 +85,8 @@ public class GuessInputCommand {
 		return rightArray;
 		
 	}
+	
+	public boolean judgeAnswer(int[] countArray) {
+		return countArray[0] == 4 && countArray[1] == 4 ? true:false; 
+	}
 }
